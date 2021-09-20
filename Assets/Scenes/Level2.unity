@@ -4655,7 +4655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814060498660073377, guid: a9d53232515541e45b9c9f750941caa9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 986.74
+      value: 1023.36
       objectReference: {fileID: 0}
     - target: {fileID: 5814060498660073377, guid: a9d53232515541e45b9c9f750941caa9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4685,6 +4685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5814060498660073379, guid: a9d53232515541e45b9c9f750941caa9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 590b670c764bf1d46ae9d88e6f72f7b9, type: 2}
     - target: {fileID: 5814060498660073382, guid: a9d53232515541e45b9c9f750941caa9, type: 3}
       propertyPath: m_Name
       value: PlayerBall
@@ -6821,6 +6825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1110462296}
     m_Modifications:
+    - target: {fileID: -8862895097397910647, guid: 9ad749137deaf79479933c8e0e528730, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8862895097397910647, guid: 9ad749137deaf79479933c8e0e528730, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -9124,6 +9132,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2102363387}
     m_Modifications:
+    - target: {fileID: -8862895097397910647, guid: 9ad749137deaf79479933c8e0e528730, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8862895097397910647, guid: 9ad749137deaf79479933c8e0e528730, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour {
             Debug.Log("<color=green>Bullet Shot</color>");
             shootingDelay = 300f;
             GameObject createdBullet = Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z - 2f), transform.rotation);
-            createdBullet.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, -100f);
+            createdBullet.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, GetComponent<playerController>().speed * 3f);
         }
 
         if (shootingDelay > 0f) {
