@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &137463242
 RectTransform:
   m_ObjectHideFlags: 0
@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 1646272804}
   - component: {fileID: 1646272803}
   - component: {fileID: 1646272802}
+  - component: {fileID: 1646272805}
   m_Layer: 5
   m_Name: L1
   m_TagString: Untagged
@@ -984,16 +985,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2116665361}
-        m_TargetAssemblyTypeName: HomeScreenUIController, Assembly-CSharp
-        m_MethodName: LevelOne
-        m_Mode: 1
+      - m_Target: {fileID: 1646272805}
+        m_TargetAssemblyTypeName: SwitchScene, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1646272803
@@ -1034,6 +1035,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646272800}
   m_CullTransparentMesh: 1
+--- !u!114 &1646272805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646272800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640ecd143a961b94a9101bb68e89e2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1702265610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1702265611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1179,6 +1192,7 @@ GameObject:
   - component: {fileID: 1949279597}
   - component: {fileID: 1949279596}
   - component: {fileID: 1949279595}
+  - component: {fileID: 1949279598}
   m_Layer: 5
   m_Name: L2
   m_TagString: Untagged
@@ -1250,16 +1264,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2116665361}
-        m_TargetAssemblyTypeName: HomeScreenUIController, Assembly-CSharp
-        m_MethodName: LevelTwo
-        m_Mode: 1
+      - m_Target: {fileID: 1949279598}
+        m_TargetAssemblyTypeName: SwitchScene, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1949279596
@@ -1300,6 +1314,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949279593}
   m_CullTransparentMesh: 1
+--- !u!114 &1949279598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949279593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640ecd143a961b94a9101bb68e89e2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2030959366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,11 +1520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cecea108700eab646a5fc1f4c405b7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A: {fileID: 1646272800}
-  B: {fileID: 1949279593}
-  C: {fileID: 137463241}
-  D: {fileID: 2119348899}
-  E: {fileID: 1702265610}
 --- !u!1 &2119348899
 GameObject:
   m_ObjectHideFlags: 0
