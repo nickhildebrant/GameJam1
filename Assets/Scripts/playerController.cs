@@ -11,9 +11,9 @@ public class playerController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody>();
-        if (speed == 0) speed = 40;
-        speed = -speed;
-        rb.velocity = transform.forward * speed;
+        //if (speed == 0) speed = 40;
+        speed = 10;
+        //rb.velocity = transform.forward * speed;
         camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
@@ -32,12 +32,13 @@ public class playerController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
         // If we want to clamp these values
-        var moveX = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+        var moveX = Input.GetAxis("Horizontal") * Time.deltaTime;
         var moveZ = Input.GetAxis("Vertical") * Time.deltaTime;
 
-        rb.velocity = new Vector3(rb.velocity.x + moveX * speed * 1.5f, rb.velocity.y - .05f, speed);
+        //rb.velocity = new Vector3(rb.velocity.x + moveX * speed * 1.5f, rb.velocity.y - .05f, speed);
+        rb.AddForce((new Vector3(moveX, 0.0f, moveZ)) * speed);
         camera.transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z + 3f);
     }
 }
