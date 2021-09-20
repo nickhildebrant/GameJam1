@@ -23,7 +23,7 @@ public class playerController : MonoBehaviour {
     /// <param name="other"></param>
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == "EndGoal") {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(nextLevel);
         }
         if (other.gameObject.tag == "Destructable") {
             // Game over
