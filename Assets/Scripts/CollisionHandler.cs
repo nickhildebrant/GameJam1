@@ -16,7 +16,7 @@ public class CollisionHandler : MonoBehaviour
     /// <param name="other"></param>
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag == "Destructable") {
-            Destroy(other.transform.parent.gameObject);
+            Destroy(other.gameObject);
         }
         Destroy(this);
     }
