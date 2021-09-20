@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
@@ -13,16 +11,13 @@ public class CollisionHandler : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles all collisions
+    /// When colliding with an object tagged Destructable, both get destroyed
     /// </summary>
     /// <param name="other"></param>
     private void OnCollisionEnter(Collision other) {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(other.gameObject.tag == "Destructable") {
+            Destroy(other.gameObject);
+        }
+        Destroy(this);
     }
 }

@@ -1,28 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class playerController : MonoBehaviour
-{
-    public Rigidbody rb;
-    private float x, z;
+public class playerController : MonoBehaviour {
+    private Rigidbody rb;
     public float speed;
+    private GameObject camera;
+
+    public string nextLevel;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody>();
-        speed = 100f;
+        speed = -40f;
+        rb.velocity = transform.forward * speed;
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
+    }
+
+    /// <summary>
+    /// Handles when the ball reaches the end goal or hits a death barrier
+    /// </summary>
+    /// <param name="other"></param>
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "EndGoal") {
+            SceneManager.LoadScene(nextLevel);
+        }
+        if (other.gameObject.tag == "Destructable") {
+            // Game over
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        x = Input.GetAxis("Horizontal");
-        z = Input.GetAxis("Vertical");
-    }
+    void Update() {
+        // If we want to clamp these values
+        var moveX = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+        var moveZ = Input.GetAxis("Vertical") * Time.deltaTime;
 
-    private void FixedUpdate(){
-        transform.Translate(x * Time.deltaTime * speed, 0f, z * Time.deltaTime * speed);
+        rb.velocity = new Vector3(rb.velocity.x + moveX * speed, rb.velocity.y - .0405f, speed);
+        camera.transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z + 3f);
     }
 }

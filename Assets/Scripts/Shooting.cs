@@ -1,40 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Shooting : MonoBehaviour
-{
+public class Shooting : MonoBehaviour {
     private float shootingDelay = 0f;
     private Rigidbody rb;
     [SerializeField] private GameObject bullet;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody>();
     }
 
-    /// <summary>
-    /// Handles the collision with the Spikes. Ignores collision with bullet
-    /// </summary>
-    /// <param name="other"></param>
-    private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.name != "Bullet(Clone") {
-            // Game over
-        }
-    }
-
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Fire1")) {
+    void Update() {
+        if (Input.GetButtonDown("Fire1") && shootingDelay == 0f) {
             Debug.Log("<color=green>Bullet Shot</color>");
             shootingDelay = 300f;
-            GameObject createdBullet = Instantiate(bullet, transform);
-            createdBullet.GetComponent<Rigidbody>().velocity = -transform.forward * 3f;
+            GameObject createdBullet = Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z - 2f), transform.rotation);
+            createdBullet.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, -100f);
         }
 
-        if(shootingDelay > 0f) {
+        if (shootingDelay > 0f) {
             shootingDelay -= 10f;
         }
     }
